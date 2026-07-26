@@ -4,7 +4,7 @@ Android·Web·기본 CS를 매일 한 문제씩 공부하고, 각자의 Fork에�
 
 ## 매일 진행 방식
 
-1. 매일 오전 7시(KST)에 `오늘의 CS 질문` Issue가 자동 생성됩니다.
+1. 평일 오전 9시(KST)에 `오늘의 CS 질문` Issue가 자동 생성됩니다.
 2. Discord `#cs_study` 채널에 질문, 마감 시간, Issue 링크가 전송됩니다.
 3. 자신의 Fork를 최신 상태로 동기화하고 답변 브랜치를 만듭니다.
 4. `templates/cs-answer.md`를 복사해 `answers/<github-id>/<질문-id>.md`에 작성합니다.
@@ -44,13 +44,13 @@ GitHub에서 `base repository`는 `YEOUL0520/CS_GUMI_5_16th`, `base`는 `main`�
 
 ## 출제 범위
 
-질문 은행은 다음 세 분야가 번갈아 나오도록 구성되어 있습니다.
+질문 은행은 약 100개의 질문으로 구성되며 다음 세 분야가 번갈아 나옵니다.
 
 - Android: 컴포넌트 생명주기, Coroutine, Room, WorkManager, Jetpack Compose, 성능과 안정성
 - Web: HTTP, 인증, 캐시, CORS, 브라우저 렌더링, 웹 보안
 - 기본 CS: 운영체제, 네트워크, 데이터베이스, 자료구조, 동시성
 
-질문은 `data/cs-questions.json`에서 관리합니다. 관리자는 PR로 질문을 추가할 수 있습니다.
+질문은 `data/cs-questions.json`과 `data/cs-questions-extra.json`에서 관리합니다. 관리자는 PR로 질문을 추가할 수 있습니다.
 
 ## Discord와 GitHub 설정
 
@@ -78,7 +78,7 @@ GitHub에서 `base repository`는 `YEOUL0520/CS_GUMI_5_16th`, `base`는 `main`�
 
 ## 관리자 운영
 
-- 자동 출제: 매일 07:00 KST
+- 자동 출제: 월요일~금요일 09:00 KST
 - 수동 실행: `Actions → 오늘의 CS 질문 → Run workflow`
 - 질문 검증: 질문 은행이나 자동화가 수정된 PR마다 자동 실행
 - 질문을 모두 사용하면 워크플로가 실패해 관리자에게 질문 추가가 필요함을 알립니다.

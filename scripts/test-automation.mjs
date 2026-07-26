@@ -7,10 +7,17 @@ import {
   validateQuestions,
 } from "./study-utils.mjs";
 
-const questions = JSON.parse(
-  await readFile(new URL("../data/cs-questions.json", import.meta.url), "utf8"),
-);
+const questions = (
+  await Promise.all(
+    ["cs-questions.json", "cs-questions-extra.json"].map(async (filename) =>
+      JSON.parse(
+        await readFile(new URL(`../data/${filename}`, import.meta.url), "utf8"),
+      ),
+    ),
+  )
+).flat();
 assert.doesNotThrow(() => validateQuestions(questions));
+assert.equal(questions.length, 100);
 
 const dateInfo = dateInfoInTimezone(
   "Asia/Seoul",

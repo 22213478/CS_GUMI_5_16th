@@ -20,9 +20,13 @@ if (/\/github\/?(?:\?.*)?$/.test(webhookUrl)) {
   throw new Error("DISCORD_WEBHOOK_URL에는 /github를 붙이지 않은 원본 Discord 웹훅 URL을 사용하세요.");
 }
 
-const questions = JSON.parse(
-  await readFile(path.join(root, "data", "cs-questions.json"), "utf8"),
-);
+const questions = (
+  await Promise.all(
+    ["cs-questions.json", "cs-questions-extra.json"].map(async (filename) =>
+      JSON.parse(await readFile(path.join(root, "data", filename), "utf8")),
+    ),
+  )
+).flat();
 validateQuestions(questions);
 
 const { api, paginate, ensureLabel, repository } = createGitHubClient();
