@@ -1,0 +1,29 @@
+name: 오늘의 CS 질문
+
+on:
+  schedule:
+    # 22:00 UTC = 다음 날 07:00 KST
+    - cron: "0 22 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: daily-cs-question
+  cancel-in-progress: false
+
+jobs:
+  create-question:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 저장소 가져오기
+        uses: actions/checkout@v6
+
+      - name: CS 질문 Issue와 Discord 알림 생성
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: node scripts/create-daily-cs-question.mjs

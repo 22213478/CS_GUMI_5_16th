@@ -1,0 +1,182 @@
+[
+  {
+    "id": "ANDROID-001",
+    "category": "Android",
+    "title": "Activity와 Fragment의 생명주기는 어떻게 다르며 왜 구분해야 하나요?",
+    "checkpoints": ["각 생명주기 콜백의 역할", "화면 회전 시 상태 변화", "메모리 누수 방지"]
+  },
+  {
+    "id": "WEB-001",
+    "category": "Web",
+    "title": "HTTP와 HTTPS의 차이와 TLS 연결 과정은 무엇인가요?",
+    "checkpoints": ["암호화·무결성·인증", "TLS 핸드셰이크", "인증서 검증"]
+  },
+  {
+    "id": "CS-001",
+    "category": "기본 CS",
+    "title": "프로세스와 스레드의 차이는 무엇인가요?",
+    "checkpoints": ["메모리 구조", "문맥 교환 비용", "멀티프로세스와 멀티스레드 선택 기준"]
+  },
+  {
+    "id": "ANDROID-002",
+    "category": "Android",
+    "title": "ViewModel은 화면 상태를 어떻게 보존하며 SavedStateHandle과 무엇이 다른가요?",
+    "checkpoints": ["구성 변경", "프로세스 종료", "UI 상태의 소유권"]
+  },
+  {
+    "id": "WEB-002",
+    "category": "Web",
+    "title": "쿠키, 세션, JWT 기반 인증은 각각 언제 적합한가요?",
+    "checkpoints": ["상태 저장 위치", "확장성과 폐기", "보안 주의점"]
+  },
+  {
+    "id": "CS-002",
+    "category": "기본 CS",
+    "title": "가상 메모리와 페이지 폴트는 어떻게 동작하나요?",
+    "checkpoints": ["페이지 테이블과 TLB", "요구 페이징", "스래싱"]
+  },
+  {
+    "id": "ANDROID-003",
+    "category": "Android",
+    "title": "Kotlin Coroutine의 suspend, CoroutineScope, Dispatcher는 어떤 역할을 하나요?",
+    "checkpoints": ["구조화된 동시성", "취소 전파", "Main·IO·Default 선택"]
+  },
+  {
+    "id": "WEB-003",
+    "category": "Web",
+    "title": "CORS는 왜 필요하고 preflight 요청은 언제 발생하나요?",
+    "checkpoints": ["Same-Origin Policy", "OPTIONS 요청", "서버 설정"]
+  },
+  {
+    "id": "CS-003",
+    "category": "기본 CS",
+    "title": "TCP와 UDP의 차이와 각각의 사용 사례는 무엇인가요?",
+    "checkpoints": ["연결과 신뢰성", "흐름·혼잡 제어", "지연 시간"]
+  },
+  {
+    "id": "ANDROID-004",
+    "category": "Android",
+    "title": "Room은 SQLite 위에서 어떤 안정성과 편의성을 제공하나요?",
+    "checkpoints": ["Entity·DAO·Database", "트랜잭션", "스키마 마이그레이션"]
+  },
+  {
+    "id": "WEB-004",
+    "category": "Web",
+    "title": "브라우저가 URL을 입력받아 화면을 그리기까지 어떤 일이 일어나나요?",
+    "checkpoints": ["DNS와 네트워크 연결", "DOM·CSSOM", "Layout·Paint·Composite"]
+  },
+  {
+    "id": "CS-004",
+    "category": "기본 CS",
+    "title": "데이터베이스 인덱스는 조회를 어떻게 빠르게 하고 어떤 비용을 만드나요?",
+    "checkpoints": ["B-Tree 구조", "복합 인덱스", "쓰기·저장 공간 비용"]
+  },
+  {
+    "id": "ANDROID-005",
+    "category": "Android",
+    "title": "WorkManager, Foreground Service, AlarmManager는 언제 구분해서 사용해야 하나요?",
+    "checkpoints": ["지연 가능성", "실행 보장", "사용자에게 보이는 작업"]
+  },
+  {
+    "id": "WEB-005",
+    "category": "Web",
+    "title": "HTTP 캐시는 Cache-Control, ETag, CDN을 통해 어떻게 동작하나요?",
+    "checkpoints": ["강한 캐시와 협상 캐시", "조건부 요청", "캐시 무효화"]
+  },
+  {
+    "id": "CS-005",
+    "category": "기본 CS",
+    "title": "트랜잭션의 ACID와 격리 수준은 무엇인가요?",
+    "checkpoints": ["Dirty·Non-repeatable·Phantom Read", "락과 MVCC", "일관성과 성능"]
+  },
+  {
+    "id": "ANDROID-006",
+    "category": "Android",
+    "title": "Jetpack Compose의 재구성은 언제 발생하며 어떻게 최적화하나요?",
+    "checkpoints": ["State와 Snapshot", "안정성", "remember와 derivedStateOf"]
+  },
+  {
+    "id": "WEB-006",
+    "category": "Web",
+    "title": "REST와 WebSocket은 통신 방식과 적합한 사용 사례가 어떻게 다른가요?",
+    "checkpoints": ["요청·응답과 양방향 연결", "연결 유지 비용", "실시간 기능"]
+  },
+  {
+    "id": "CS-006",
+    "category": "기본 CS",
+    "title": "Race Condition, Mutex, Semaphore는 무엇이며 어떻게 동기화하나요?",
+    "checkpoints": ["임계 구역", "상호 배제", "교착 상태 가능성"]
+  },
+  {
+    "id": "ANDROID-007",
+    "category": "Android",
+    "title": "ANR은 왜 발생하며 메인 스레드 작업을 어떻게 진단하나요?",
+    "checkpoints": ["메인 Looper", "입력·Broadcast 타임아웃", "프로파일링과 StrictMode"]
+  },
+  {
+    "id": "WEB-007",
+    "category": "Web",
+    "title": "XSS와 CSRF의 차이와 방어 방법은 무엇인가요?",
+    "checkpoints": ["공격이 신뢰하는 대상", "출력 인코딩·CSP", "SameSite·CSRF Token"]
+  },
+  {
+    "id": "CS-007",
+    "category": "기본 CS",
+    "title": "교착 상태의 네 가지 조건과 해결 전략은 무엇인가요?",
+    "checkpoints": ["상호 배제·점유 대기·비선점·순환 대기", "예방과 회피", "탐지와 복구"]
+  },
+  {
+    "id": "ANDROID-008",
+    "category": "Android",
+    "title": "Android 프로세스가 종료된 뒤 화면 상태를 어떻게 복원해야 하나요?",
+    "checkpoints": ["프로세스 사망", "Bundle과 SavedStateHandle", "영속 데이터와 UI 상태"]
+  },
+  {
+    "id": "WEB-008",
+    "category": "Web",
+    "title": "DNS와 CDN은 웹 서비스의 지연 시간과 가용성을 어떻게 개선하나요?",
+    "checkpoints": ["재귀·권한 DNS", "TTL", "엣지 캐시와 장애 대응"]
+  },
+  {
+    "id": "CS-008",
+    "category": "기본 CS",
+    "title": "Garbage Collection은 객체를 어떻게 추적하고 애플리케이션에 어떤 영향을 주나요?",
+    "checkpoints": ["도달 가능성", "세대별 수집", "Stop-the-world와 튜닝"]
+  },
+  {
+    "id": "ANDROID-009",
+    "category": "Android",
+    "title": "Intent, PendingIntent, Binder는 Android 컴포넌트 사이에서 어떻게 사용되나요?",
+    "checkpoints": ["명시적·암시적 Intent", "권한 위임", "프로세스 간 통신"]
+  },
+  {
+    "id": "WEB-009",
+    "category": "Web",
+    "title": "OAuth 2.0 Authorization Code 흐름은 어떻게 동작하며 PKCE는 왜 필요한가요?",
+    "checkpoints": ["Resource Owner·Client·Authorization Server", "Code 교환", "모바일·SPA 보안"]
+  },
+  {
+    "id": "CS-009",
+    "category": "기본 CS",
+    "title": "해시 테이블의 충돌은 어떻게 처리하며 시간 복잡도는 언제 나빠지나요?",
+    "checkpoints": ["체이닝과 개방 주소법", "Load Factor", "해시 함수"]
+  },
+  {
+    "id": "ANDROID-010",
+    "category": "Android",
+    "title": "Android 앱 아키텍처에서 UI, Domain, Data 계층을 왜 분리하나요?",
+    "checkpoints": ["의존성 방향", "테스트 가능성", "Repository와 UseCase"]
+  },
+  {
+    "id": "WEB-010",
+    "category": "Web",
+    "title": "로드 밸런서는 트래픽을 어떻게 분산하고 장애를 감지하나요?",
+    "checkpoints": ["L4와 L7", "분산 알고리즘", "Health Check와 세션 고정"]
+  },
+  {
+    "id": "CS-010",
+    "category": "기본 CS",
+    "title": "CPU 스케줄링 알고리즘은 응답 시간과 처리량을 어떻게 절충하나요?",
+    "checkpoints": ["FCFS·SJF·Round Robin", "기아와 우선순위", "선점형 스케줄링"]
+  }
+]

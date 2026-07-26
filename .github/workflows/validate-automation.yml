@@ -1,0 +1,26 @@
+name: CS 자동화 검증
+
+on:
+  pull_request:
+    paths:
+      - "data/**"
+      - "scripts/**"
+      - ".github/workflows/**"
+  push:
+    branches:
+      - main
+    paths:
+      - "data/**"
+      - "scripts/**"
+      - ".github/workflows/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: node scripts/test-automation.mjs
