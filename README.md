@@ -6,9 +6,9 @@ Android·Web·기본 CS를 매일 한 문제씩 공부하고, 각자의 Fork에�
 
 1. 평일 오전 9시(KST)에 `오늘의 CS 질문` Issue가 자동 생성됩니다.
 2. Discord `#cs_study` 채널에 질문, 마감 시간, Issue 링크가 전송됩니다.
-3. 자신의 Fork를 최신 상태로 동기화하고 답변 브랜치를 만듭니다.
+3. 자신의 Fork를 최신 상태로 동기화하고 원하는 이름으로 답변 브랜치를 만듭니다.
 4. `templates/cs-answer.md`를 복사해 `answers/<github-id>/<질문-id>.md`에 작성합니다.
-5. 자신의 Fork에 Commit·Push한 뒤 이 저장소의 `main` 브랜치로 Pull Request를 만듭니다.
+5. 자신의 Fork에 Commit·Push한 뒤 이 저장소의 `main` 브랜치로 Pull Request를 만듭니다. PR 제목과 제출 정보는 자동으로 입력됩니다.
 6. 다른 참여자의 답변을 읽고 리뷰나 질문을 남깁니다.
 
 마감은 매일 23:59입니다. 정답 암기보다 자신의 언어로 설명하고 서로의 관점을 비교하는 것을 목표로 합니다.
@@ -31,16 +31,23 @@ git switch main
 git merge --ff-only upstream/main
 git push origin main
 
-git switch -c answer/<내-github-id>/<질문-id>
+git switch -c answer/<질문-id>
 mkdir -p answers/<내-github-id>
 cp templates/cs-answer.md answers/<내-github-id>/<질문-id>.md
 
 git add answers/<내-github-id>/<질문-id>.md
-git commit -m "answer: <질문-id> <내-github-id>"
-git push -u origin answer/<내-github-id>/<질문-id>
+git commit -m "답변 추가"
+git push -u origin answer/<질문-id>
 ```
 
-GitHub에서 `base repository`는 `YEOUL0520/CS_GUMI_5_16th`, `base`는 `main`으로 선택합니다. PR 제목은 `[CS][질문-id] 이름` 형식을 권장합니다.
+GitHub에서 `base repository`는 `YEOUL0520/CS_GUMI_5_16th`, `base`는 `main`으로 선택합니다. PR 작성 화면에서는 **답변 요약만 작성**하면 됩니다.
+
+PR을 만들면 자동화가 `answers/<github-id>/<질문-id>.md` 경로를 읽어 다음 내용을 채웁니다.
+
+- 제목: `[CS][질문-id] github-id`
+- 본문: 질문 Issue 링크, 질문 ID, 작성자
+
+브랜치명과 커밋 메시지에는 별도 형식 제한이 없습니다. 다만 자동 입력을 위해 답변 파일 경로를 정확히 지키고, 하나의 PR에는 답변 파일 하나만 포함해 주세요. 자동 입력 정보가 잘못되었다면 파일 경로를 수정해 Push하면 다시 반영됩니다.
 
 ## 출제 범위
 

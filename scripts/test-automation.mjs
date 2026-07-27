@@ -6,6 +6,11 @@ import {
   dateInfoInTimezone,
   validateQuestions,
 } from "./study-utils.mjs";
+import {
+  buildBody,
+  buildTitle,
+  findAnswer,
+} from "./pr-metadata-utils.mjs";
 
 const questions = (
   await Promise.all(
@@ -37,5 +42,30 @@ const message = buildDiscordMessage(question, "https://github.com/example/issues
 assert.match(message, /📚 오늘의 CS 질문/);
 assert.match(message, /마감: 오늘 23:59/);
 assert.match(message, /https:\/\/github\.com\/example\/issues\/1/);
+
+const answer = findAnswer([
+  { filename: "answers/student/ANDROID-001.md" },
+  { filename: "README.md" },
+]);
+assert.deepEqual(answer, {
+  githubId: "student",
+  questionId: "ANDROID-001",
+});
+assert.equal(buildTitle(answer), "[CS][ANDROID-001] student");
+
+const prBody = buildBody({
+  body: "## 답변 요약\n\n생명주기를 비교했습니다.",
+  ...answer,
+  issue: { number: 2, html_url: "https://github.com/example/issues/2" },
+});
+assert.match(prBody, /#2 — https:\/\/github\.com\/example\/issues\/2/);
+assert.match(prBody, /작성자: @student/);
+assert.match(prBody, /생명주기를 비교했습니다/);
+assert.throws(() =>
+  findAnswer([
+    "answers/student/ANDROID-001.md",
+    "answers/student/WEB-001.md",
+  ]),
+);
 
 console.log(`CS 자동화 테스트 통과: 질문 ${questions.length}개`);
