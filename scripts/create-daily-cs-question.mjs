@@ -30,7 +30,14 @@ const questions = (
 validateQuestions(questions);
 
 const { api, paginate, ensureLabel, repository } = createGitHubClient();
-const dateInfo = dateInfoInTimezone(timezone);
+const automaticDate = dateInfoInTimezone(timezone);
+const requestedDate = process.env.STUDY_DATE?.trim();
+if (requestedDate && !/^\d{4}-\d{2}-\d{2}$/.test(requestedDate)) {
+  throw new Error("STUDY_DATE는 YYYY-MM-DD 형식이어야 합니다.");
+}
+const dateInfo = requestedDate
+  ? { key: requestedDate, display: requestedDate }
+  : automaticDate;
 
 await ensureLabel("daily-cs", "1D76DB", "매일 자동으로 출제되는 CS 질문");
 await ensureLabel("discord-notified", "0E8A16", "Discord 커스텀 알림 전송 완료");

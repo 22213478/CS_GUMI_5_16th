@@ -2,9 +2,14 @@ name: 오늘의 CS 질문
 
 on:
   schedule:
-    # 월~금 00:00 UTC = 09:00 KST
-    - cron: "0 0 * * 1-5"
+    # 정각의 GitHub Actions 예약 실행 혼잡을 피해 월~금 00:07 UTC = 09:07 KST
+    - cron: "7 0 * * 1-5"
   workflow_dispatch:
+    inputs:
+      study_date:
+        description: "출제할 날짜 (YYYY-MM-DD, 비우면 오늘 KST)"
+        required: false
+        type: string
 
 permissions:
   contents: read
@@ -26,4 +31,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          STUDY_DATE: ${{ inputs.study_date }}
         run: node scripts/create-daily-cs-question.mjs
