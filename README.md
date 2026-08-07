@@ -4,7 +4,7 @@ Android·Web·기본 CS를 매일 한 문제씩 공부하고, 각자의 Fork에�
 
 ## 매일 진행 방식
 
-1. 평일 오전 9시 7분(KST)에 `오늘의 CS 질문` Issue가 자동 생성됩니다.
+1. 평일 오전 7시 7분(KST)에 `오늘의 CS 질문` Issue가 자동 생성됩니다.
 2. Discord `#cs_study` 채널에 질문, 마감 시간, Issue 링크가 전송됩니다.
 3. 자신의 Fork를 최신 상태로 동기화하고 원하는 이름으로 답변 브랜치를 만듭니다.
 4. `templates/cs-answer.md`를 복사해 `answers/<github-id>/<질문-id>.md`에 작성합니다.
@@ -85,7 +85,7 @@ PR을 만들면 자동화가 `answers/<github-id>/<질문-id>.md` 경로를 읽�
 
 ## 관리자 운영
 
-- 자동 출제: 월요일~금요일 09:07 KST
+- 자동 출제: 월요일~금요일 07:07 KST
 - 수동 실행: `Actions → 오늘의 CS 질문 → Run workflow`
 - 누락분 재실행 시 `study_date`에 `YYYY-MM-DD`를 넣으면 해당 날짜로 생성됩니다.
 - 질문 검증: 질문 은행이나 자동화가 수정된 PR마다 자동 실행
